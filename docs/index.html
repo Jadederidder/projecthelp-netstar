@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Netstar Companion — Three bundles. One powerful support system.</title>
+<meta name="description" content="Netstar Companion delivers on-demand armed and medical response, lifestyle services and 24/7 concierge across three tailored bundles. A Project Help white-label deployment." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #1e88ff;
+    --blue-bright: #4ea2ff;
+    --blue-deep: #0a4ea8;
+    --navy: #0A0E27;
+    --navy-mid: #131836;
+    --navy-soft: #1d2347;
+    --violet: #8B83FF;
+    --violet-deep: #5b51d9;
+    --paper: #FAFAFA;
+    --paper-warm: #F2F3F8;
+    --line: #E1E4ED;
+    --line-soft: #EEF0F5;
+    --ink: #14172B;
+    --slate: #525876;
+    --display: 'Bricolage Grotesque', system-ui, sans-serif;
+    --body: 'Manrope', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--body);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  img, svg { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+  /* NAV */
+  .nav { position: sticky; top: 0; z-index: 100; background: rgba(10, 14, 39, 0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .nav-inner { max-width: 1320px; margin: 0 auto; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+  .nav-brand { display: flex; align-items: center; gap: 12px; color: #fff; }
+  .nav-mark { width: 36px; height: 36px; border-radius: 9px; background: linear-gradient(135deg, var(--blue) 0%, var(--violet-deep) 100%); display: grid; place-items: center; color: #fff; font-family: var(--display); font-weight: 800; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 16px rgba(30, 136, 255, 0.4); }
+  .nav-brand-text { font-family: var(--display); font-weight: 700; font-size: 15px; letter-spacing: 0.3px; line-height: 1.1; }
+  .nav-brand-text small { display: block; font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 1.4px; opacity: 0.55; text-transform: uppercase; margin-top: 3px; }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.78); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: #fff; }
+  .nav-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--blue); color: #fff; padding: 10px 20px; border-radius: 999px; font-size: 13px; font-weight: 600; transition: background 0.2s, transform 0.2s; }
+  .nav-cta:hover { background: var(--blue-bright); transform: translateY(-1px); }
+  @media (max-width: 900px) { .nav-links { display: none; } }
+
+  /* HERO */
+  .hero { position: relative; background: var(--navy); color: #fff; overflow: hidden; min-height: 88vh; display: flex; align-items: center; }
+  .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 700px 500px at 78% 25%, rgba(30, 136, 255, 0.35) 0%, transparent 60%), radial-gradient(ellipse 600px 400px at 15% 85%, rgba(139, 131, 255, 0.22) 0%, transparent 60%); }
+  .hero::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.045) 1px, transparent 0); background-size: 40px 40px; mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%); -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%); }
+  .hero-inner { position: relative; z-index: 2; max-width: 1320px; margin: 0 auto; padding: 90px 32px; width: 100%; display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; align-items: center; }
+  .hero-content { min-width: 0; }
+  .hero-phone { position: relative; display: flex; justify-content: center; align-items: center; }
+  .hero-phone-frame {
+    position: relative;
+    max-width: 320px;
+    width: 100%;
+    padding: 12px 12px 14px;
+    background: linear-gradient(160deg, #2a2f4a 0%, #0a0e27 100%);
+    border-radius: 44px;
+    box-shadow:
+      0 40px 80px rgba(0,0,0,0.5),
+      0 0 60px rgba(30, 136, 255, 0.15),
+      inset 0 0 0 1px rgba(255,255,255,0.08);
+    transform: rotate(-2deg);
+    transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1);
+  }
+  .hero-phone-frame:hover { transform: rotate(0deg) scale(1.02); }
+  .hero-phone-frame::before {
+    content: "";
+    position: absolute;
+    top: 18px; left: 50%;
+    transform: translateX(-50%);
+    width: 90px; height: 22px;
+    background: #000;
+    border-radius: 12px;
+    z-index: 2;
+  }
+  .hero-phone-frame img {
+    width: 100%;
+    height: auto;
+    border-radius: 32px;
+    display: block;
+  }
+  @media (max-width: 1100px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero-phone-frame { max-width: 260px; }
+  }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 14px; padding: 6px 18px 6px 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 999px; font-size: 12px; font-weight: 500; letter-spacing: 0.4px; color: rgba(255,255,255,0.85); margin-bottom: 44px; backdrop-filter: blur(8px); }
+  .partner-pill { display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px; background: rgba(30, 136, 255, 0.18); border-radius: 999px; font-size: 10px; text-transform: uppercase; letter-spacing: 1.4px; font-weight: 700; color: var(--blue-bright); }
+  .partner-pill .live-dot { width: 6px; height: 6px; background: var(--blue); border-radius: 50%; box-shadow: 0 0 0 3px rgba(30, 136, 255, 0.25); animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+  h1.hero-title { font-family: var(--display); font-weight: 700; font-size: clamp(42px, 6.5vw, 88px); line-height: 0.95; letter-spacing: -0.04em; margin-bottom: 32px; }
+  h1.hero-title .gradient { background: linear-gradient(120deg, var(--blue) 0%, var(--violet) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  h1.hero-title .light { font-weight: 300; color: rgba(255,255,255,0.65); }
+  .hero-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-top: 40px; }
+  .hero-tagline { font-size: 19px; line-height: 1.55; color: rgba(255,255,255,0.72); max-width: 540px; }
+  .hero-tagline strong { color: #fff; font-weight: 600; }
+  .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .hero-stat { padding: 20px 0 4px; border-top: 1px solid rgba(255,255,255,0.18); }
+  .hero-stat strong { display: block; font-family: var(--display); font-weight: 700; font-size: 30px; letter-spacing: -1px; color: #fff; line-height: 1; margin-bottom: 8px; }
+  .hero-stat strong .accent { color: var(--blue-bright); font-size: 0.65em; margin-left: 1px; }
+  .hero-stat span { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.5); line-height: 1.4; display: block; }
+  .hero-actions { margin-top: 56px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--blue); color: #fff; padding: 17px 30px; border-radius: 999px; font-size: 15px; font-weight: 600; transition: background 0.2s, transform 0.2s; }
+  .btn-primary:hover { background: var(--blue-bright); transform: translateY(-2px); }
+  .btn-ghost { display: inline-flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.9); padding: 17px 28px; border-radius: 999px; font-size: 15px; font-weight: 600; border: 1px solid rgba(255,255,255,0.2); transition: background 0.2s, border-color 0.2s; }
+  .btn-ghost:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.4); }
+
+  /* INTRO STRIP */
+  .intro { background: var(--paper); padding: 90px 32px; border-bottom: 1px solid var(--line-soft); }
+  .intro-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.5fr; gap: 64px; align-items: start; }
+  @media (max-width: 800px) { .intro-inner { grid-template-columns: 1fr; gap: 28px; } }
+  .intro-label { font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--blue); padding-top: 8px; }
+  .intro-text { font-family: var(--display); font-weight: 400; font-size: clamp(22px, 2.6vw, 32px); line-height: 1.3; color: var(--ink); letter-spacing: -0.01em; }
+  .intro-text .em { color: var(--blue); font-weight: 600; }
+
+  /* SECTION HEAD common */
+  .section-head { display: flex; justify-content: space-between; align-items: end; gap: 48px; margin-bottom: 60px; flex-wrap: wrap; }
+  .section-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--blue); margin-bottom: 16px; }
+  .section-eyebrow::before { content: ""; width: 26px; height: 1px; background: var(--blue); }
+  .section-title { font-family: var(--display); font-weight: 700; font-size: clamp(36px, 5vw, 56px); line-height: 1.02; letter-spacing: -0.025em; color: var(--ink); max-width: 780px; }
+  .section-title .em { color: var(--blue); }
+  .section-tagline { font-size: 17px; line-height: 1.55; color: var(--slate); max-width: 460px; }
+
+  /* BUNDLES */
+  .bundles { padding: 110px 32px; background: var(--paper); }
+  .bundles-inner { max-width: 1320px; margin: 0 auto; }
+  .bundle-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 28px; }
+  @media (max-width: 1000px) { .bundle-cards { grid-template-columns: 1fr; } }
+  .bundle-card { position: relative; background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 36px 32px 32px; overflow: hidden; transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1), box-shadow 0.4s; }
+  .bundle-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px rgba(10, 14, 39, 0.1); }
+  .bundle-card.core { border-top: 4px solid var(--blue); }
+  .bundle-card.pro { background: var(--navy); color: #fff; border: 1px solid var(--navy); transform: translateY(-12px); box-shadow: 0 30px 60px rgba(10, 14, 39, 0.25); }
+  .bundle-card.pro:hover { transform: translateY(-18px); }
+  .bundle-card.lux { border-top: 4px solid var(--violet); }
+  .bundle-card.pro::before { content: "Most popular"; position: absolute; top: 24px; right: 24px; background: var(--blue); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; padding: 5px 11px; border-radius: 999px; }
+  .bundle-tag { font-size: 11px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; margin-bottom: 14px; }
+  .bundle-card.core .bundle-tag { color: var(--blue); }
+  .bundle-card.pro .bundle-tag { color: var(--blue-bright); }
+  .bundle-card.lux .bundle-tag { color: var(--violet-deep); }
+  .bundle-name { font-family: var(--display); font-weight: 700; font-size: 36px; letter-spacing: -1px; margin-bottom: 10px; line-height: 1; }
+  .bundle-desc { font-size: 14px; line-height: 1.5; color: var(--slate); margin-bottom: 28px; min-height: 42px; }
+  .bundle-card.pro .bundle-desc { color: rgba(255,255,255,0.65); }
+  .bundle-price { display: flex; align-items: baseline; gap: 4px; margin-bottom: 6px; }
+  .bundle-price .currency { font-family: var(--display); font-weight: 700; font-size: 22px; color: var(--ink); letter-spacing: -0.5px; }
+  .bundle-card.pro .bundle-price .currency { color: #fff; }
+  .bundle-price .amount { font-family: var(--display); font-weight: 800; font-size: 64px; line-height: 1; letter-spacing: -2px; color: var(--ink); }
+  .bundle-card.pro .bundle-price .amount { color: #fff; }
+  .bundle-period { font-size: 13px; color: var(--slate); margin-bottom: 28px; }
+  .bundle-card.pro .bundle-period { color: rgba(255,255,255,0.55); }
+  .bundle-cta { display: block; width: 100%; text-align: center; padding: 14px; border-radius: 999px; font-size: 14px; font-weight: 600; letter-spacing: 0.2px; transition: background 0.2s; margin-bottom: 28px; }
+  .bundle-card.core .bundle-cta { background: var(--ink); color: #fff; }
+  .bundle-card.core .bundle-cta:hover { background: var(--blue); }
+  .bundle-card.pro .bundle-cta { background: var(--blue); color: #fff; }
+  .bundle-card.pro .bundle-cta:hover { background: var(--blue-bright); }
+  .bundle-card.lux .bundle-cta { background: var(--violet-deep); color: #fff; }
+  .bundle-card.lux .bundle-cta:hover { background: var(--violet); }
+  .bundle-features { list-style: none; border-top: 1px solid var(--line-soft); padding-top: 22px; }
+  .bundle-card.pro .bundle-features { border-top-color: rgba(255,255,255,0.1); }
+  .bundle-features li { display: flex; align-items: flex-start; gap: 10px; padding: 7px 0; font-size: 13.5px; line-height: 1.45; color: var(--ink); }
+  .bundle-card.pro .bundle-features li { color: rgba(255,255,255,0.85); }
+  .bundle-features li::before { content: ""; flex-shrink: 0; width: 16px; height: 16px; margin-top: 3px; border-radius: 50%; background: rgba(30, 136, 255, 0.12); background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M4 8 l3 3 l5-6' stroke='%231e88ff' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>"); background-repeat: no-repeat; background-position: center; background-size: 12px; }
+  .bundle-card.pro .bundle-features li::before { background-color: rgba(78, 162, 255, 0.18); }
+  .bundle-card.lux .bundle-features li::before { background-color: rgba(139, 131, 255, 0.18); background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M4 8 l3 3 l5-6' stroke='%235b51d9' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>"); }
+
+  .family-strip { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 32px; background: linear-gradient(110deg, var(--paper-warm) 0%, #fff 100%); border: 1px solid var(--line-soft); border-left: 3px solid var(--blue); border-radius: 14px; flex-wrap: wrap; }
+  .family-strip-text strong { display: block; font-family: var(--display); font-weight: 700; font-size: 17px; margin-bottom: 4px; color: var(--ink); }
+  .family-strip-text span { font-size: 14px; color: var(--slate); }
+  .family-strip-price { font-family: var(--display); font-weight: 700; font-size: 20px; color: var(--blue); letter-spacing: -0.5px; white-space: nowrap; }
+  .family-strip-price small { font-size: 12px; color: var(--slate); font-weight: 500; margin-left: 4px; }
+
+  /* COMPARE TABLE */
+  .compare-section { background: var(--paper-warm); padding: 110px 32px; }
+  .compare-inner { max-width: 1180px; margin: 0 auto; }
+  .compare-table { background: #fff; border-radius: 20px; overflow: hidden; border: 1px solid var(--line); }
+  .compare-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; align-items: center; border-bottom: 1px solid var(--line-soft); }
+  .compare-row:last-child { border-bottom: none; }
+  .compare-row.head { background: var(--ink); color: #fff; }
+  .compare-cell { padding: 18px 24px; font-size: 14px; text-align: center; }
+  .compare-cell.feature { text-align: left; font-weight: 600; color: var(--ink); }
+  .compare-row.head .compare-cell { font-family: var(--display); font-weight: 700; font-size: 16px; padding: 22px 24px; }
+  .compare-row.head .compare-cell.tier-pro { background: linear-gradient(135deg, var(--blue) 0%, var(--blue-deep) 100%); }
+  .compare-row.head .compare-cell.tier-lux { background: linear-gradient(135deg, var(--violet) 0%, var(--violet-deep) 100%); }
+  .compare-row.head .compare-cell.feature { text-align: left; color: rgba(255,255,255,0.6); font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase; font-family: var(--body); font-weight: 700; }
+  .check { color: var(--blue); font-weight: 700; font-size: 18px; }
+  .compare-row .compare-cell.tier-lux .check { color: var(--violet-deep); }
+  .dash { color: var(--line); font-size: 18px; }
+  .compare-row:hover { background: var(--paper-warm); }
+  .compare-row.head:hover { background: var(--ink); }
+  @media (max-width: 700px) { .compare-cell { padding: 14px 12px; font-size: 12px; } .compare-row.head .compare-cell { padding: 16px 12px; font-size: 13px; } }
+
+  /* COMPANION DEEP DIVE */
+  .companion { padding: 110px 32px; background: var(--navy); color: #fff; position: relative; overflow: hidden; }
+  .companion::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 80% 50%, rgba(30, 136, 255, 0.18) 0%, transparent 50%), radial-gradient(circle at 10% 10%, rgba(139, 131, 255, 0.14) 0%, transparent 40%); }
+  .companion-inner { position: relative; z-index: 2; max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: center; }
+  @media (max-width: 1000px) { .companion-inner { grid-template-columns: 1fr; gap: 60px; } }
+  .companion .section-eyebrow { color: var(--blue-bright); }
+  .companion .section-eyebrow::before { background: var(--blue-bright); }
+  .companion .section-title { color: #fff; max-width: 600px; }
+  .companion .section-title .em { color: var(--blue-bright); font-style: italic; font-weight: 600; }
+  .companion-lede { font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.7); max-width: 520px; margin: 24px 0 40px; }
+  .companion-features { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .companion-feature { padding: 18px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; backdrop-filter: blur(8px); }
+  .companion-feature strong { display: block; font-family: var(--display); font-weight: 700; font-size: 15px; letter-spacing: -0.1px; margin-bottom: 4px; color: #fff; }
+  .companion-feature span { font-size: 12.5px; line-height: 1.45; color: rgba(255,255,255,0.62); }
+
+  /* Trio screenshot in companion section */
+  .phone-wrap { position: relative; display: flex; justify-content: center; align-items: center; }
+  .trio-img { max-width: 100%; height: auto; filter: drop-shadow(0 30px 50px rgba(0,0,0,0.4)); }
+
+  /* BENTO SERVICES */
+  .services { padding: 110px 32px; background: var(--paper); }
+  .services-inner { max-width: 1320px; margin: 0 auto; }
+  .bento { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: minmax(180px, auto); gap: 14px; margin-top: 40px; }
+  .bento-tile { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 28px; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+  .bento-tile:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(10, 14, 39, 0.06); border-color: var(--blue); }
+  .bento-tile.wide { grid-column: span 2; }
+  .bento-tile.feature { grid-column: span 2; grid-row: span 2; background: linear-gradient(140deg, var(--navy) 0%, var(--navy-soft) 100%); color: #fff; border: none; }
+  .bento-tile.feature::before { content: ""; position: absolute; top: -20%; right: -20%; width: 70%; aspect-ratio: 1; background: radial-gradient(circle, rgba(30, 136, 255, 0.4) 0%, transparent 65%); pointer-events: none; }
+  .bento-tile.violet { background: linear-gradient(140deg, var(--violet) 0%, var(--violet-deep) 100%); color: #fff; border: none; }
+  .bento-icon { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--blue) 0%, var(--blue-deep) 100%); display: grid; place-items: center; color: #fff; margin-bottom: 18px; }
+  .bento-tile.feature .bento-icon, .bento-tile.violet .bento-icon { background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); }
+  .bento-icon svg { width: 22px; height: 22px; stroke-width: 2; }
+  .bento-title { font-family: var(--display); font-weight: 700; font-size: 17px; letter-spacing: -0.2px; margin-bottom: 6px; color: inherit; }
+  .bento-tile.feature .bento-title, .bento-tile.violet .bento-title { color: #fff; }
+  .bento-tile.feature .bento-title { font-size: 28px; }
+  .bento-desc { font-size: 13px; line-height: 1.5; color: var(--slate); }
+  .bento-tile.feature .bento-desc, .bento-tile.violet .bento-desc { color: rgba(255,255,255,0.75); font-size: 14px; }
+  .bento-tile.feature .bento-desc { font-size: 15px; max-width: 360px; }
+  .bento-meta { margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.12); display: flex; gap: 24px; }
+  .bento-meta div strong { display: block; font-family: var(--display); font-weight: 700; font-size: 22px; color: #fff; letter-spacing: -0.5px; line-height: 1.1; }
+  .bento-meta div span { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.55); }
+  @media (max-width: 1000px) { .bento { grid-template-columns: repeat(2, 1fr); } .bento-tile.feature { grid-column: span 2; grid-row: span 2; } .bento-tile.wide { grid-column: span 2; } }
+  @media (max-width: 600px) { .bento { grid-template-columns: 1fr; } .bento-tile.feature, .bento-tile.wide { grid-column: span 1; } .bento-tile.feature { grid-row: span 1; min-height: 280px; } }
+
+  /* HOW IT WORKS */
+  .how { padding: 110px 32px; background: var(--paper); border-top: 1px solid var(--line-soft); }
+  .how-inner { max-width: 1180px; margin: 0 auto; }
+  .how-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 50px; }
+  @media (max-width: 900px) { .how-steps { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 500px) { .how-steps { grid-template-columns: 1fr; } }
+  .step { position: relative; padding: 36px 28px 32px; background: #fff; border: 1px solid var(--line); border-radius: 18px; transition: border-color 0.2s, transform 0.2s; }
+  .step:hover { border-color: var(--blue); transform: translateY(-3px); }
+  .step-num { font-family: var(--display); font-weight: 800; font-size: 56px; line-height: 1; background: linear-gradient(135deg, var(--blue) 0%, var(--violet) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -2px; margin-bottom: 18px; opacity: 0.85; }
+  .step strong { display: block; font-family: var(--display); font-weight: 700; font-size: 17px; margin-bottom: 8px; letter-spacing: -0.2px; color: var(--ink); }
+  .step span { font-size: 13.5px; line-height: 1.55; color: var(--slate); }
+
+  /* DOWNLOAD CTA */
+  .download { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 60%, var(--violet-deep) 100%); color: #fff; padding: 120px 32px; text-align: center; position: relative; overflow: hidden; }
+  .download::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 50% 0%, rgba(30, 136, 255, 0.25) 0%, transparent 50%); }
+  .download-inner { position: relative; z-index: 2; max-width: 820px; margin: 0 auto; }
+  .download h2 { font-family: var(--display); font-weight: 700; font-size: clamp(36px, 5vw, 60px); line-height: 1.05; letter-spacing: -0.025em; margin-bottom: 20px; }
+  .download h2 .gradient { background: linear-gradient(120deg, var(--blue-bright) 0%, var(--violet) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .download p { font-size: 18px; color: rgba(255,255,255,0.72); margin-bottom: 40px; max-width: 580px; margin-left: auto; margin-right: auto; }
+  .store-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .store-btn { display: inline-flex; align-items: center; gap: 12px; background: #fff; color: var(--navy); padding: 14px 22px; border-radius: 12px; font-weight: 600; transition: transform 0.2s; }
+  .store-btn:hover { transform: translateY(-2px); }
+  .store-btn svg { width: 26px; height: 26px; }
+  .store-btn-text { display: flex; flex-direction: column; gap: 1px; line-height: 1.1; text-align: left; }
+  .store-btn-text small { font-size: 10px; opacity: 0.55; letter-spacing: 0.3px; text-transform: uppercase; font-weight: 500; }
+  .store-btn-text strong { font-family: var(--display); font-size: 15px; font-weight: 700; }
+
+  /* FOOTER */
+  footer { background: #06091B; color: rgba(255,255,255,0.62); padding: 80px 32px 36px; }
+  .footer-grid { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 48px; margin-bottom: 56px; }
+  @media (max-width: 800px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 500px) { .footer-grid { grid-template-columns: 1fr; } }
+  .footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .footer-brand-text { color: #fff; font-family: var(--display); font-weight: 700; font-size: 16px; line-height: 1.1; }
+  .footer-brand-text small { display: block; font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 1.4px; opacity: 0.55; text-transform: uppercase; margin-top: 3px; }
+  .footer-blurb { font-size: 13.5px; line-height: 1.6; max-width: 320px; }
+  .footer-blurb strong { color: #fff; font-weight: 600; }
+  footer h4 { color: #fff; font-family: var(--display); font-weight: 700; font-size: 13px; margin-bottom: 18px; letter-spacing: 0.4px; }
+  footer ul { list-style: none; }
+  footer ul li { margin-bottom: 10px; font-size: 13.5px; }
+  footer ul li a:hover { color: #fff; }
+  .contact-row { margin-bottom: 14px; font-size: 13.5px; }
+  .contact-row .label { font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 4px; font-weight: 600; }
+  .contact-row a, .contact-row span { color: #fff; font-weight: 500; }
+  .footer-bottom { max-width: 1320px; margin: 0 auto; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 12px; color: rgba(255,255,255,0.4); }
+
+  /* ANIMATIONS */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-eyebrow, h1.hero-title, .hero-grid, .hero-actions { opacity: 0; animation: rise 0.9s cubic-bezier(.2,.8,.2,1) forwards; }
+    .hero-eyebrow { animation-delay: 0.1s; }
+    h1.hero-title { animation-delay: 0.2s; }
+    .hero-grid { animation-delay: 0.4s; }
+    .hero-actions { animation-delay: 0.55s; }
+  }
+  @keyframes rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <div class="nav-mark">N</div>
+      <div class="nav-brand-text">Netstar Companion<small>by Project Help</small></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#bundles">Bundles</a></li>
+      <li><a href="#compare">Compare</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how">How it works</a></li>
+    </ul>
+    <a href="https://companion.netstar.co.za/" class="nav-cta">Sign up →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="partner-pill"><span class="live-dot"></span>Live Operations</span>
+      <span>A Project Help × Netstar white-label deployment</span>
+    </div>
+    <h1 class="hero-title">
+      Three tailored bundles.<br/>
+      <span class="gradient">One powerful</span> <span class="light">support system.</span>
+    </h1>
+    <div class="hero-grid">
+      <p class="hero-tagline">
+        On-demand armed and medical response, lifestyle services, and a 24/7 personal assistant — all in a single subscription. <strong>Choose your level of peace of mind.</strong>
+      </p>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>1,500<span class="accent">+</span></strong><span>Armed responders<br/>nationwide</span></div>
+        <div class="hero-stat"><strong>250k<span class="accent">+</span></strong><span>Trusted suppliers<br/>in network</span></div>
+        <div class="hero-stat"><strong>24<span class="accent">/7</span></strong><span>Control room<br/>coverage</span></div>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a href="#bundles" class="btn-primary">See the bundles →</a>
+      <a href="https://companion.netstar.co.za/" class="btn-ghost">Sign up at netstar.co.za</a>
+    </div>
+    </div>
+    <div class="hero-phone">
+      <div class="hero-phone-frame">
+        <img src="phone-main.jpg" alt="Netstar Companion app — panic button and service shortcuts" />
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="intro-inner">
+    <div class="intro-label">The Idea</div>
+    <p class="intro-text">
+      Companion has just got <span class="em">bigger and better</span> with all-new tailored bundles. Even more on-demand emergency services, exclusive 2-for-1 deals, and your own Personal Assistant to get things done on your behalf.
+    </p>
+  </div>
+</section>
+
+<!-- BUNDLES -->
+<section class="bundles" id="bundles">
+  <div class="bundles-inner">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow">The Bundles</div>
+        <h2 class="section-title">Pick your level of <span class="em">peace of mind.</span></h2>
+      </div>
+      <p class="section-tagline">Three tiers. Same Companion panic. Each tier adds more lifestyle services on top.</p>
+    </div>
+
+    <div class="bundle-cards">
+      <article class="bundle-card core">
+        <div class="bundle-tag">Tier 01 — Essential</div>
+        <h3 class="bundle-name">Core</h3>
+        <p class="bundle-desc">Essential protection. Everyday peace of mind for safety, savings and service.</p>
+        <div class="bundle-price"><span class="currency">R</span><span class="amount">89</span></div>
+        <p class="bundle-period">Per month, all-inclusive</p>
+        <a href="https://companion.netstar.co.za/?plan=core" class="bundle-cta">Sign up for Core</a>
+        <ul class="bundle-features">
+          <li>Companion armed &amp; medical response</li>
+          <li>24/7 Roadside Assist</li>
+          <li>Windscreen Chip Repair</li>
+          <li>HeyNetstar Vehicle Assistant</li>
+          <li>Discount Vouchers</li>
+          <li>HeyNetstar Personal Assistant</li>
+          <li>Licence &amp; Fines Assist</li>
+        </ul>
+      </article>
+
+      <article class="bundle-card pro">
+        <div class="bundle-tag">Tier 02 — Upgraded</div>
+        <h3 class="bundle-name">Pro</h3>
+        <p class="bundle-desc">Upgraded value. Smart living and safety combined.</p>
+        <div class="bundle-price"><span class="currency">R</span><span class="amount">109</span></div>
+        <p class="bundle-period">Per month, all-inclusive</p>
+        <a href="https://companion.netstar.co.za/?plan=pro" class="bundle-cta">Sign up for Pro</a>
+        <ul class="bundle-features">
+          <li>Everything in Core</li>
+          <li>Screen Fix · device repair</li>
+          <li>HeyNetstar Home Assistant</li>
+          <li>2-for-1 Dining Deals</li>
+          <li>Extended concierge access</li>
+        </ul>
+      </article>
+
+      <article class="bundle-card lux">
+        <div class="bundle-tag">Tier 03 — Premium</div>
+        <h3 class="bundle-name">Lux</h3>
+        <p class="bundle-desc">Premium lifestyle plus advanced protection. All in one.</p>
+        <div class="bundle-price"><span class="currency">R</span><span class="amount">135</span></div>
+        <p class="bundle-period">Per month, all-inclusive</p>
+        <a href="https://companion.netstar.co.za/?plan=lux" class="bundle-cta">Sign up for Lux</a>
+        <ul class="bundle-features">
+          <li>Everything in Pro</li>
+          <li>2-for-1 Coffee · daily</li>
+          <li>Safe Drive · designated driver</li>
+          <li>Hijack Assist · 48hr support</li>
+          <li>Heat &amp; Eat · meal cashback</li>
+          <li>HeyNetstar Global Assistant</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="family-strip">
+      <div class="family-strip-text">
+        <strong>One family, one membership.</strong>
+        <span>Add additional Companion-only members across any tier.</span>
+      </div>
+      <div class="family-strip-price">+R15<small>per member / month</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE TABLE -->
+<section class="compare-section" id="compare">
+  <div class="compare-inner">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow">Compare bundles</div>
+        <h2 class="section-title">All the services, <span class="em">side by side.</span></h2>
+      </div>
+    </div>
+
+    <div class="compare-table">
+      <div class="compare-row head">
+        <div class="compare-cell feature">Service</div>
+        <div class="compare-cell">Core</div>
+        <div class="compare-cell tier-pro">Pro</div>
+        <div class="compare-cell tier-lux">Lux</div>
+      </div>
+      <div class="compare-row"><div class="compare-cell feature">Netstar Companion · armed &amp; medical</div><div class="compare-cell"><span class="check">✓</span></div><div class="compare-cell"><span class="check">✓</span></div><div class="compare-cell tier-lux"><span class="check">✓</span></div></div>
+      <div class="compare-row"><div class="compare-cell feature">24/7 Roadside Assist</div><div class="compare-cell"><span class="check">✓</span></div><div class="compare-cell"><span class="check">✓</span></div><div class="compare-cell tier-lux"><span class="check">✓</span></div></div>
+      <div class="compare-row"><div class="compare-cell feature">Windscreen Chip Repair</div><div class="compare-cell"><span class="check">✓</span></div><div class="compare-cell"><span class="check">✓</span></div><div class="compare-cell tier-lux"><span class="check">✓</span></div></div>
+      <div class="compare-row"><div class="compare-cell feature">HeyNetstar Vehicle Assistant</div><div class="compare-cell"><span class="check">✓</span></div><div class="compare-cell"><span class="check">✓</span></div><div class="compare-cell tier-lux"><span class="check">✓</span></div></div>
+      <div class="compare-row"><div class="compare-cell feature">Discount Vouchers · PnP, Shoprite, Checkers, Dis-Chem</div><div class="compare-cell"><span class="check">✓</span></div><div class="compare-cell"><span class="check">✓</span></div><div class="compare-cell tier-lux"><span class="check">✓</span></div></div>
+      <div class="compare-row"><div class="compare-cell feature">HeyNetstar Personal Assistant</div><div class="compare-cell"><span class="check">✓</span></div><div class="compare-cell"><span class="check">✓</span></div><div class="compare-cell tier-lux"><span class="check">✓</span></div></div>
+      <div class="compare-row"><div class="compare-cell feature">Licence &amp; Fines Assist</div><div class="compare-cell"><span class="check">✓</span></div><div class="compare-cell"><span class="check">✓</span></div><div class="compare-cell tier-lux"><span class="check">✓</span></div></div>
+      <div class="compare-row"><div class="compare-cell feature">Screen Fix · device repair</div><div class="compare-cell"><span class="dash">—</span></div><div class="compare-cell"><span class="check">✓</span></div><div class="compare-cell tier-lux"><span class="check">✓</span></div></div>
+      <div class="compare-row"><div class="compare-cell feature">HeyNetstar Home Assistant</div><div class="compare-cell"><span class="dash">—</span></div><div class="compare-cell"><span class="check">✓</span></div><div class="compare-cell tier-lux"><span class="check">✓</span></div></div>
+      <div class="compare-row"><div class="compare-cell feature">2-for-1 Dining</div><div class="compare-cell"><span class="dash">—</span></div><div class="compare-cell"><span class="check">✓</span></div><div class="compare-cell tier-lux"><span class="check">✓</span></div></div>
+      <div class="compare-row"><div class="compare-cell feature">2-for-1 Coffee</div><div class="compare-cell"><span class="dash">—</span></div><div class="compare-cell"><span class="dash">—</span></div><div class="compare-cell tier-lux"><span class="check">✓</span></div></div>
+      <div class="compare-row"><div class="compare-cell feature">Safe Drive · designated driver</div><div class="compare-cell"><span class="dash">—</span></div><div class="compare-cell"><span class="dash">—</span></div><div class="compare-cell tier-lux"><span class="check">✓</span></div></div>
+      <div class="compare-row"><div class="compare-cell feature">Hijack Assist</div><div class="compare-cell"><span class="dash">—</span></div><div class="compare-cell"><span class="dash">—</span></div><div class="compare-cell tier-lux"><span class="check">✓</span></div></div>
+      <div class="compare-row"><div class="compare-cell feature">Heat &amp; Eat · meal cashback</div><div class="compare-cell"><span class="dash">—</span></div><div class="compare-cell"><span class="dash">—</span></div><div class="compare-cell tier-lux"><span class="check">✓</span></div></div>
+      <div class="compare-row"><div class="compare-cell feature">HeyNetstar Global Assistant</div><div class="compare-cell"><span class="dash">—</span></div><div class="compare-cell"><span class="dash">—</span></div><div class="compare-cell tier-lux"><span class="check">✓</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANION DEEP DIVE -->
+<section class="companion">
+  <div class="companion-inner">
+    <div>
+      <div class="section-eyebrow">The Core Service</div>
+      <h2 class="section-title">A panic button that <span class="em">actually</span> dispatches.</h2>
+      <p class="companion-lede">
+        Companion is the foundation of every bundle. Tap the panic button — or shake your phone — and the closest armed responder is autonomously dispatched to your exact GPS. No human bottleneck between panic and arrival.
+      </p>
+      <div class="companion-features">
+        <div class="companion-feature"><strong>Mobile Response</strong><span>Use it from home, work, anywhere.</span></div>
+        <div class="companion-feature"><strong>Shake-to-Activate</strong><span>Trigger a panic without unlocking.</span></div>
+        <div class="companion-feature"><strong>Emergency Recording</strong><span>20s of audio/video held for evidence.</span></div>
+        <div class="companion-feature"><strong>5-Contact SMS</strong><span>Real-time location sent to your circle.</span></div>
+        <div class="companion-feature"><strong>Autonomous Dispatch</strong><span>Closest vehicle, no human routing.</span></div>
+        <div class="companion-feature"><strong>Geo-Located</strong><span>Pinpoint GPS, not approximate area.</span></div>
+      </div>
+    </div>
+    <div class="phone-wrap">
+      <img src="phone-trio.png" alt="The Netstar Companion app — panic button, sign-up flow, and rewards screens" class="trio-img" />
+    </div>
+  </div>
+</section>
+
+<!-- BENTO SERVICES -->
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow">In the app</div>
+        <h2 class="section-title">Fourteen services. <span class="em">One subscription.</span></h2>
+      </div>
+      <p class="section-tagline">Each one chosen for usage frequency, perceived value, and how it slots into the Companion workflow.</p>
+    </div>
+
+    <div class="bento">
+      <div class="bento-tile feature">
+        <div>
+          <div class="bento-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="17" r="2"/><circle cx="18" cy="17" r="2"/><path d="M2 17h2m4 0h8m4 0h2"/><path d="M6 12h12l-2-5H8z"/></svg></div>
+          <div class="bento-title">24/7 Roadside Assist</div>
+          <div class="bento-desc">Flat battery, lockouts, fuel delivery, mechanical breakdowns. Anywhere — at home or on the road. Towing to the nearest approved repairer included.</div>
+        </div>
+        <div class="bento-meta">
+          <div><strong>10L</strong><span>Free fuel</span></div>
+          <div><strong>40km</strong><span>Free tow radius</span></div>
+          <div><strong>1st hr</strong><span>Labour included</span></div>
+        </div>
+      </div>
+
+      <div class="bento-tile">
+        <div class="bento-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l9-4 9 4v8l-9 4-9-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div><div class="bento-title">Windscreen Chip Repair</div><div class="bento-desc">120 Glasfit branches plus 100 mobile units. Up to 4 incidents per year.</div></div>
+      </div>
+
+      <div class="bento-tile">
+        <div class="bento-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 12V6a2 2 0 012-2h14a2 2 0 012 2v6M3 12v6a2 2 0 002 2h14a2 2 0 002-2v-6"/><circle cx="8" cy="16" r="1"/><circle cx="16" cy="16" r="1"/></svg></div>
+        <div><div class="bento-title">Vehicle Assistant</div><div class="bento-desc">24/7 concierge for service bookings, tyres, deals and admin.</div></div>
+      </div>
+
+      <div class="bento-tile wide violet">
+        <div class="bento-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18l-1 13H4z"/><path d="M9 11V7a3 3 0 016 0v4"/></svg></div>
+        <div><div class="bento-title">Discount Vouchers</div><div class="bento-desc">Pick n Pay · Shoprite · Checkers · Dis-Chem. Up to 5 vouchers per item, per customer, per month.</div></div>
+      </div>
+
+      <div class="bento-tile">
+        <div class="bento-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <div><div class="bento-title">Personal Assistant</div><div class="bento-desc">Hand over your to-do list. We'll get it done.</div></div>
+      </div>
+
+      <div class="bento-tile">
+        <div class="bento-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10h6M7 14h10"/></svg></div>
+        <div><div class="bento-title">Licence &amp; Fines</div><div class="bento-desc">Renewal delivered. Up to 50% off fines paid in 30 days.</div></div>
+      </div>
+
+      <div class="bento-tile wide">
+        <div class="bento-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3v18M4 8h6a4 4 0 010 8H4"/><path d="M16 3v18"/></svg></div>
+        <div><div class="bento-title">2-for-1 Dining</div><div class="bento-desc">Up to R120 cashback at over 2,000 restaurants — sit-down, takeaway and delivery.</div></div>
+      </div>
+
+      <div class="bento-tile">
+        <div class="bento-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h14v8a4 4 0 01-4 4H7a4 4 0 01-4-4z"/><path d="M17 11h2a3 3 0 010 6h-2"/></svg></div>
+        <div><div class="bento-title">2-for-1 Coffee</div><div class="bento-desc">Daily voucher via Zapper. R25 off the second cup.</div></div>
+      </div>
+
+      <div class="bento-tile">
+        <div class="bento-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h18l-2 6H5z"/><path d="M7 10c0-3 2-3 2-6M12 10c0-3 2-3 2-6M17 10c0-3 2-3 2-6"/></svg></div>
+        <div><div class="bento-title">Heat &amp; Eat</div><div class="bento-desc">R120 cashback on ready-made meals.</div></div>
+      </div>
+
+      <div class="bento-tile">
+        <div class="bento-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M7 17V8l3-4h4l3 4v9"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/></svg></div>
+        <div><div class="bento-title">Safe Drive</div><div class="bento-desc">Designated driver. 6 take-me-home rides annually.</div></div>
+      </div>
+
+      <div class="bento-tile">
+        <div class="bento-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M9 6h6M11 18h2"/></svg></div>
+        <div><div class="bento-title">Screen Fix</div><div class="bento-desc">2 × R1,500 device-screen claims yearly.</div></div>
+      </div>
+
+      <div class="bento-tile">
+        <div class="bento-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6z"/></svg></div>
+        <div><div class="bento-title">Hijack Assist</div><div class="bento-desc">Rental car, locksmith, cash-send, 48hr guard.</div></div>
+      </div>
+
+      <div class="bento-tile">
+        <div class="bento-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9v9a1 1 0 01-1 1h-5v-7H10v7H5a1 1 0 01-1-1z"/></svg></div>
+        <div><div class="bento-title">Home Assistant</div><div class="bento-desc">Plumbers, electricians, renovators — vetted and booked.</div></div>
+      </div>
+
+      <div class="bento-tile">
+        <div class="bento-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg></div>
+        <div><div class="bento-title">Global Assistant</div><div class="bento-desc">24/7 lifestyle concierge — anywhere you are.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="how-inner">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow">How to sign up</div>
+        <h2 class="section-title">Four steps. <span class="em">Then enjoy.</span></h2>
+      </div>
+    </div>
+    <div class="how-steps">
+      <div class="step"><div class="step-num">01</div><strong>Subscribe</strong><span>Choose Core, Pro or Lux at companion.netstar.co.za and complete sign-up.</span></div>
+      <div class="step"><div class="step-num">02</div><strong>Download</strong><span>Grab the Netstar Companion app from the App Store, Google Play or Huawei AppGallery.</span></div>
+      <div class="step"><div class="step-num">03</div><strong>Register</strong><span>Use the mobile number you provided at sign-up. The app links to your subscription.</span></div>
+      <div class="step"><div class="step-num">04</div><strong>Use it</strong><span>Panic button live. Concierge ready. Vouchers loaded. The full bundle is unlocked.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD CTA -->
+<section class="download">
+  <div class="download-inner">
+    <h2>Download the Companion app, <span class="gradient">unlock the bundle.</span></h2>
+    <p>Available on every major app store. Sign up first at companion.netstar.co.za, then register in the app with your mobile number.</p>
+    <div class="store-buttons">
+      <a href="https://apps.apple.com/za/app/netstar-companion/id1560818974" class="store-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+        <div class="store-btn-text"><small>Download on the</small><strong>App Store</strong></div>
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.ads.app.netstar&hl=en_ZA" class="store-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.6c-.3.3-.5.8-.5 1.4v18c0 .6.2 1.1.5 1.4L13.6 12 3.6 1.6zM14.4 12.7l2.3 2.3-11.7 6.7c-.3.2-.6.2-1 .1l10.4-9.1zM14.4 11.3L4 2.2c.4 0 .7 0 1 .1l11.7 6.7-2.3 2.3zM20.5 10.9c.7.4 1.1 1 1.1 1.7s-.4 1.3-1.1 1.7l-3 1.7-2.6-2.6 2.6-2.6 3 1.7z"/></svg>
+        <div class="store-btn-text"><small>Get it on</small><strong>Google Play</strong></div>
+      </a>
+      <a href="https://appgallery.huawei.com/#/app/C111067243" class="store-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg>
+        <div class="store-btn-text"><small>Explore it on</small><strong>AppGallery</strong></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <div class="nav-mark">PH</div>
+        <div class="footer-brand-text">Project Help<small>Embedded armed response · Cape Town</small></div>
+      </div>
+      <p class="footer-blurb">
+        Project Help builds, brands and operates embedded armed-response and lifestyle platforms for South Africa's largest financial and mobility brands. <strong>Netstar Companion</strong> is one of our white-label deployments.
+      </p>
+    </div>
+    <div>
+      <h4>Companion</h4>
+      <ul>
+        <li><a href="#bundles">Bundles</a></li>
+        <li><a href="#compare">Compare</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#how">Sign up</a></li>
+        <li><a href="https://companion.netstar.co.za/">Buy at netstar.co.za</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Project Help</h4>
+      <ul>
+        <li><a href="https://projecthelp.co.za">Home</a></li>
+        <li><a href="https://projecthelp.co.za/work">Our Work</a></li>
+        <li><a href="https://projecthelp.co.za/partners">Partners</a></li>
+        <li><a href="mailto:jd@projecthelp.co.za">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="contact-row"><div class="label">Project Help HQ</div><span>Durbanville Hills, Cape Town</span></div>
+      <div class="contact-row"><div class="label">Email</div><a href="mailto:jd@projecthelp.co.za">jd@projecthelp.co.za</a></div>
+      <div class="contact-row"><div class="label">Phone</div><a href="tel:0100126407">010 012 6407</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© Project Help (Pty) Ltd · Reg 2019/206859/07</div>
+    <div>Netstar Companion is operated by Project Help under licence to Netstar (Pty) Ltd.</div>
+  </div>
+</footer>
+
+</body>
+</html>
